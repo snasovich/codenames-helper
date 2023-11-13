@@ -1,5 +1,6 @@
 import print_utils
 import logging
+import user_interactions
 
 from gensim.downloader import load
 
@@ -7,21 +8,9 @@ from clue import Clue
 from clue_finder import find_clues
 from thresholds import Thresholds
 
+
 model_name = "glove-wiki-gigaword-50"
 # model_name = "glove-wiki-gigaword-300"
-
-board_words = {
-    "spymaster": ["shadow", "ice", "trip", "scale", "ground", "snowman", "bermuda", "paste", "bed"],
-    "opponent": ["moscow", "saturn", "row", "disease", "face", "crane", "van", "buffalo"],
-    "neutral": ["hole", "sound", "duck", "board", "press", "part", "rome"],
-    "assassin": ["kid"]
-}
-# board_words = {
-#     'spymaster': ['platypus', 'green', 'crash', 'sub', 'ray', 'plane', 'row', 'jupiter', 'mint'],
-#     'opponent': ['block', 'india', 'embassy', 'sock', 'scale', 'round', 'phoenix', 'night'],
-#     'neutral': ['canada', 'whale', 'pool', 'jam', 'center', 'undertaker', 'ninja'],
-#     'assassin': ['rose']
-# }
 
 # Configure logging
 logging.basicConfig(
@@ -43,7 +32,12 @@ logging.info(f"Loading model '{model_name}'")
 word_vectors = load(model_name)
 logging.info("Model loaded!")
 
-logging.info("Finding clues for specified board words...")
+board_words = user_interactions.select_board_words()
+if board_words == None:
+    print("No board words specified, exiting!")
+    exit()
+
+logging.info(f"Finding clues for specified board words: {board_words}")
 clues = find_clues(word_vectors, board_words)
 logging.info(f"Clues found (total: {len(clues)})")
 
