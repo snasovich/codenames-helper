@@ -4,8 +4,8 @@ from thresholds import Thresholds
 scoring_weights = {
     'target_words_weight': 3,        # How much weight to give to target own words
     'other_own_weight': 1,           # How much weight to give to other own words
-    'assassin_weight': 7,            # How much weight to give to the assassin's similarity score
-    'opponent_weight': 3,            # How much weight to give to each opponent word's similarity score
+    'assassin_weight': 10,           # How much weight to give to the assassin's similarity score
+    'opponent_weight': 4,            # How much weight to give to each opponent word's similarity score
     'neutral_weight': 1,             # How much weight to give to each neutral word's similarity score
 }
 

@@ -12,6 +12,12 @@ _board_word_samples = [
         'opponent': ['block', 'india', 'embassy', 'sock', 'scale', 'round', 'phoenix', 'night'],
         'neutral': ['canada', 'whale', 'pool', 'jam', 'center', 'undertaker', 'ninja'],
         'assassin': ['rose']
+    },
+    {
+        'spymaster': ['platypus', 'green', 'sub', 'ray', 'row', 'jupiter', 'mint'],
+        'opponent': ['block', 'india', 'embassy', 'sock', 'scale', 'round', 'phoenix', 'night'],
+        'neutral': ['canada', 'whale', 'pool', 'jam', 'center', 'undertaker', 'ninja'],
+        'assassin': ['rose']
     }
 ]
 
