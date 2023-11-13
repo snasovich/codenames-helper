@@ -1,4 +1,4 @@
-from codenames_board_scraper import load_board_from_chrome
+from board_scraper import load_board_from_chrome
 
 _board_word_samples = [
     {
