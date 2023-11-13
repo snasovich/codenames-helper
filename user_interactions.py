@@ -1,3 +1,5 @@
+from codenames_board_scraper import load_board_from_chrome
+
 _board_word_samples = [
     {
         "spymaster": ["shadow", "ice", "trip", "scale", "ground", "snowman", "bermuda", "paste", "bed"],
@@ -47,8 +49,9 @@ def select_board_words() -> dict[str, list[str]]:
                     continue
                 return board_words
             elif choice == 2:
-                # TODO: This is temporary
-                exit()
+                # TODO: Render some instructions how to start Chrome properly
+                # TODO: This is temporary, need to ask whether current team is red or blue
+                return load_board_from_chrome(True)
             elif choice == 3:
                 return None
             else:
