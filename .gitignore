@@ -1,7 +1,3 @@
-# Additional ignores for virtual environment and such
-bin/
-pyvenv.cfg
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
